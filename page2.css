@@ -1,0 +1,429 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"Lora", serif;
+  font-family: "Montserrat,sans-serif";
+  
+}
+
+
+
+html::-webkit-scrollbar {
+  background: linear-gradient(to right, #C1D4A4, #D2E3B9, #C1D4A4);
+  width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgb(98, 114, 53);
+  border-radius: 10px;
+}
+
+/* Navbar */
+#navbar {
+  background: linear-gradient(to right, #C1D4A4, #D2E3B9, #C1D4A4);
+  background-attachment: fixed;
+}
+
+#logo img {
+  border-radius: 10px;
+  width: 160px;
+  margin-left: 40px;
+}
+
+.navbar-nav {
+  margin-left: 50px;
+}
+
+.nav-item .nav-link {
+  color:#587817;
+  margin-left: 10px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.nav-item .nav-link:hover {
+  background: rgb(129, 165, 67);
+  border-radius: 5px;
+  color: rgb(54, 29, 9);
+}
+
+#navbar form button {
+  background-color: #708a42;
+  color: antiquewhite;
+  border: 1px solid rgb(131, 141, 42);
+  box-shadow: 0 5px 15px #59871c;
+}
+
+.form-control::placeholder {
+  color: #b9bfb3;
+  font-style: italic;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.btn-primary i {
+  color: rgb(241, 230, 230); /* Change la couleur de l'icône */
+}
+
+/* navbar end */
+
+.all content{
+background-color: #f0ecdc;
+}
+/* blurry card start */
+.container img {
+  width: 800px; /* Ensures responsiveness */
+  max-width: 1000px; /* Limit maximum width */
+  height: 600px; /* Maintain aspect ratio */
+  margin-left:-200px;
+}
+.bg, .newsletter-bg {
+  background-color: #f0ecdc;
+  background-repeat: no-repeat;
+  background-size: 1080px auto;
+  height: 800px;
+}
+
+
+/* collection */
+/* General styling for the background */
+.bg {
+  position: relative; /* Ensure elements can position relative to this */
+  background-color: #f0ecdc; /* Light background color */
+}
+
+
+/* Collection buttons container styling */
+.collection {
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px; /* Add spacing between buttons and image */
+}
+
+/* Buttons styling */
+.active-filter-btn,
+.btn {
+  background: #3b2d15; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 1px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for size */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+/* Active button styling */
+
+
+/* Image and title section styling */
+.container img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.container h2 {
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: #962828; /* Darker text for contrast */
+  text-transform: capitalize;
+}
+
+
+
+ /* collection */
+ 
+ 
+ /* items llist */
+ 
+
+ section.collection {
+  background-color:#f0ecdc; /* Match the body's background */
+  padding: 20px; /* Add padding if needed */
+}
+
+/* Remove unwanted spacing around images */
+img {
+  display: block;
+  margin: 0 auto; /* Center images horizontally */
+}
+/* Style for the btn-group container */
+.btn-group {
+display: flex;
+gap: 10px; /* Space between buttons */
+justify-content: center; /* Center the buttons */
+margin: 20px 0; /* Space around the group */
+color: #951818;
+}
+
+/* General button styles */
+.btn {
+padding: 10px 20px;
+font-size: 14px;
+border-radius: 5px;
+border: 2px solid transparent; /* Initially, no border */
+cursor: pointer;
+transition: all 0.3s ease;
+color: #703030;
+}
+
+/* Style for primary button */
+.btn-primary {
+background-color: #81a743; /* Blue background */
+color: white;
+}
+
+/* Style for outline buttons */
+.btn-outline-primary {
+background-color: transparent; /* Transparent background */
+color: #81a743; /* Blue text */
+border-color: #81a743; /* Blue border */
+}
+
+/* Hover effect for all buttons */
+.btn:hover {
+transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Active effect for buttons */
+.btn:active {
+transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
+
+.filter-btn[data-category="top"].active,
+.filter-btn[data-category="bottom"].active,
+.filter-btn[data-category="shoes"].active {
+background-color: #81a743; /* Darker blue for active buttons */
+color: white;
+}
+
+
+ /* items list*/
+ html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body{
+  background: #eee;
+}
+
+.container{
+  max-width: 1200px;
+  margin:0 auto;
+  padding:3rem 2rem;
+  font-size: 62.5%; /* Apply this only to the container */
+}
+
+
+.container .products-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap:2rem;
+}
+
+.container .products-container .product{
+  text-align: center;
+  font-family:Montserrat,sans-serif;
+  padding:3rem 2rem;
+  background: #f0ecdc;
+  box-shadow: 0 5px 15px #684811;
+  outline: .1rem solid #c5ab90;
+  outline-offset: -1.5rem;
+  cursor: pointer;
+}
+
+.container .products-container .product:hover{
+  outline: .2rem solid #c5ab90;
+  outline-offset: 0;
+}
+
+.container .products-container .product img{
+  height: 25rem;
+}
+
+.container .products-container .product:hover img{
+  transform: scale(0.9);
+}
+
+.container .products-container .product h3{
+  padding:.5rem 0;
+  font-size: 2.4rem; /* Increase font size */
+  color:#444;
+}
+
+.container .products-container .product:hover h3{
+  color:#526922;
+}
+
+.container .products-container .product .price{
+  font-size: 2rem;
+  color:#444;
+}
+
+.products-preview{
+  position: fixed;
+  top:0; left:0;
+  min-height: 100vh;
+  width: 100%;
+  background: rgba(0,0,0,.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-preview .preview{
+  display: none;
+  padding:2rem;
+  text-align: center;
+  font-family: Montserrat,sans-serif;
+  background: #fff;
+  position: relative;
+  margin:2rem;
+  width: 40rem;
+}
+
+.products-preview .preview.active{
+  display: inline-block;
+}
+
+.products-preview .preview img{
+  height: 30rem;
+  width:60rem;
+  padding-right: 220px;
+  
+}
+
+.products-preview .preview .fa-times{
+  position: absolute;
+  top:1rem; right:1.5rem;
+  cursor: pointer;
+  color:#444;
+  font-size: 4rem;
+}
+
+.products-preview .preview .fa-times:hover{
+  transform: rotate(90deg);
+}
+
+.products-preview .preview h3{
+  color:#444;
+  padding:.5rem 0;
+  font-size: 3rem; /* Adjust for the preview title */
+}
+
+.products-preview .preview .stars{
+  padding:1rem 0;
+  font-size: 1.7rem;
+}
+
+.products-preview .preview .stars i{
+  color:#27ae60;
+}
+
+.products-preview .preview .stars span{
+  color:#999;
+}
+
+.products-preview .preview p{
+  line-height: 1.5;
+  padding:1rem 0;
+  font-size: 1.6rem;
+  color:#777;
+}
+
+.products-preview .preview .price{
+  padding:1rem 0;
+  font-size: 2.5rem;
+  color:#27ae60;
+}
+
+.products-preview .preview .buttons{
+  display: flex;
+  gap:1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  font-size: 2rem; /* Larger button text */
+}
+
+.products-preview .preview .buttons a{
+  flex:1 1 16rem;
+  padding:1rem;
+  font-size: 1.8rem;
+  color:#444;
+  border:.1rem solid #444;
+}
+
+.products-preview .preview .buttons a.cart{
+  background: #444;
+  color:#fff;
+}
+
+.products-preview .preview .buttons a.cart:hover{
+  background: #111;
+}
+
+.products-preview .preview .buttons a.buy:hover{
+  background: #444;
+  color:#fff;
+}
+
+
+@media (max-width:991px){
+
+  html{
+     font-size: 55%;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .products-preview .preview img{
+     height: 25rem;
+  }
+
+}
+
+@media (max-width:450px){
+
+  html{
+     font-size: 50%;
+  }
+
+}
+#footer{
+width: 100%;
+align-items: center;
+text-align: center;
+background:linear-gradient(to right, #C1D4A4, #D2E3B9, #C1D4A4) ;
+border-radius: 10px;
+cursor: pointer;
+}
+
+.credits{
+color: rgb(42, 30, 10);
+text-shadow: #59871c;
+
+}
+.credits a{
+text-decoration: none;
+color: rgb(54, 39, 13);
+font-weight: bold;
+}
+#credits a span{
+color: rgb(104, 16, 16);
+}
+.copyright span{
+color: #afb384;
+}
+/* footert section end */

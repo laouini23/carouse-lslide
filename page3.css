@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Lora", serif;
+    
+}
+
+
+
+html::-webkit-scrollbar {
+    background: linear-gradient(to right, #C1D4A4, #D2E3B9, #C1D4A4);
+    width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: rgb(98, 114, 53);
+    border-radius: 10px;
+}
+
+/* Navbar */
+#navbar {
+    background: linear-gradient(to right, #C1D4A4, #D2E3B9, #C1D4A4);
+    background-attachment: fixed;
+}
+
+#logo img {
+    border-radius: 10px;
+    width: 160px;
+    margin-left: 40px;
+}
+
+.navbar-nav {
+    margin-left: 50px;
+}
+
+.nav-item .nav-link {
+    color: #587817;
+    margin-left: 10px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.nav-item .nav-link:hover {
+    background: rgb(129, 165, 67);
+    border-radius: 5px;
+    color: rgb(54, 29, 9);
+}
+
+#navbar form button {
+    background-color: #708a42;
+    color: antiquewhite;
+    border: 1px solid rgb(131, 141, 42);
+    box-shadow: 0 5px 15px #59871c;
+}
+
+.form-control::placeholder {
+    color: #b9bfb3;
+    font-style: italic;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* navbar end */
+
+#Àpropos {
+    text-align: center;
+    padding: 50px 10px;
+    background-color: #f0ecdc;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap if they overflow */
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px; /* Adds consistent spacing between flex items */
+}
+/* Parent container */
+.image-container {
+    position: relative; /* Makes positioning relative for child elements */
+    width: 100%;
+    max-width: 600px; /* Adjust the image container size */
+    margin: auto;
+}
+
+/* Image */
+.image-container img {
+    display: flex;
+    width: 638px;
+    height: 504px;
+    border-radius: 5px;
+    padding-bottom: 35px;
+}
+
+/* Login container */
+.login-container {
+    position: absolute; /* Positions it over the image */
+    top: 54%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offsets by 50% for perfect centering */
+    background-color: #f0ecdc70; /* Semi-transparent white background */
+    padding: 20px;
+    border-radius:19px;
+    box-shadow: 0 15px 20px #5a4832;
+    width: 100%;
+    height:390px;
+    max-width: 600px; /* Set a fixed width for login box */
+    text-align: center;
+}
+
+/* Form styles */
+.login-container h1 {
+    margin-bottom: 15px;
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 60px;
+
+    color: #372510;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.signup-btn {
+    width: 50%;
+    padding: 10px;
+    background-color: #433215;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+.login-container p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-container a {
+    color: #802424;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+/* footer section start */
+#footer{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    background:linear-gradient(to right, #C1D4A4, #D2E3B9, #C1D4A4) ;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
+.credits{
+    color: rgb(240, 237, 232);
+    text-shadow: #59871c;
+
+}
+.credits a{
+    text-decoration: none;
+    color: rgb(54, 39, 13);
+    font-weight: bold;
+}
+#credits a span{
+    color: white;
+}
+.copyright span{
+    color: #757a38;
+}
+/* footert section end */
+
