@@ -1,0 +1,103 @@
+3d room
+
+No worries! Here's a step-by-step guide on how to assign and set up the script in Unity:
+
+1. Create the Script in Unity:
+Open Unity.
+In the Project window (usually at the bottom), right-click inside your Assets folder and go to Create > C# Script.
+Name the script MouseLook.
+Double-click the script to open it in your code editor (e.g., Visual Studio) and paste the code I provided earlier.
+2. Attach the Script to the Camera:
+In the Hierarchy window (usually on the left), find your Camera object.
+Select the Camera object by clicking on it.
+In the Inspector window (on the right side), you'll see a button called Add Component at the bottom.
+Click Add Component and type MouseLook in the search bar that appears.
+Select the MouseLook script from the list to attach it to the Camera.
+3. Set the Player Body (Object) in the Inspector:
+You now need to tell the script which object is the "body" that the camera will rotate around when you move the mouse horizontally.
+
+If your camera is inside a parent object (like an empty game object or the player), you’ll drag this parent object to the script. If your camera is standalone, create an empty object to act as the "body."
+
+Here’s how:
+
+In the Hierarchy window, if your Camera is not already inside a parent object, create an empty object by right-clicking the Hierarchy > Create Empty.
+Name it something like PlayerBody or CameraPivot.
+Drag your Camera object inside this PlayerBody object to make it a child of the empty object.
+Back to the Inspector where you attached the MouseLook script, you'll see a field labeled Player Body in the script settings.
+
+Drag the PlayerBody (the empty object) from the Hierarchy into this field.
+4. Test the Setup:
+Press the Play button in Unity to run the scene.
+Move your mouse, and the camera should now rotate horizontally (around the player body) and vertically (based on mouse movement).
+Recap:
+MouseLook Script is attached to the Camera.
+PlayerBody is the object that rotates horizontally (it can be the camera’s parent or an empty object).
+Drag the PlayerBody object into the script’s Player Body field in the Inspector.
+Let me know if this helps!
+
+
+
+
+
+The script I provided only handles basic camera rotation based on mouse movement—it doesn't include zoom functionality or the ability to focus on objects like a phone on a desk. But we can easily add zoom functionality to the script!
+
+To Add Zooming:
+You can add zoom with the scroll wheel using the camera’s Field of View (FOV) for a perspective camera or moving the camera forward for an orthographic view. Here’s how you can extend the current script to allow zooming in and out:
+
+Updated MouseLook Script with Zoom:
+csharp
+Copier le code
+using UnityEngine;
+
+public class MouseLook : MonoBehaviour
+{
+    public float mouseSensitivity = 100f;
+    public Transform playerBody;
+
+    float xRotation = 0f;
+    public float zoomSpeed = 2f;  // Speed of zoom
+    public float minZoom = 20f;   // Minimum zoom (max FOV)
+    public float maxZoom = 60f;   // Maximum zoom (min FOV)
+
+    Camera cam;
+
+    void Start()
+    {
+        cam = Camera.main; // Get the camera
+        Cursor.lockState = CursorLockMode.Locked;  // Locks the cursor to the center of the screen
+    }
+
+    void Update()
+    {
+        // Mouse look rotation
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        xRotation -= mouseY;  // Rotating on X-axis
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);  // Limiting vertical rotation
+
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);  // Apply vertical rotation
+        playerBody.Rotate(Vector3.up * mouseX);  // Rotate the body horizontally
+
+        // Zoom functionality
+        float scroll = Input.GetAxis("Mouse ScrollWheel"); // Get the mouse scroll input
+        cam.fieldOfView -= scroll * zoomSpeed * 100f;  // Change FOV based on scroll input
+        cam.fieldOfView = Mathf.Clamp(cam.fieldOfView, minZoom, maxZoom);  // Clamp the zoom range
+    }
+}
+What’s New:
+Zoom Variables:
+zoomSpeed: Controls how fast the zoom happens.
+minZoom and maxZoom: These limit how much you can zoom in and out. (For a normal perspective camera, values between 20–60 are good for FOV.)
+Scroll to Zoom:
+Using the mouse scroll wheel (Input.GetAxis("Mouse ScrollWheel")), you can zoom the camera in and out by adjusting the camera’s Field of View (FOV).
+How It Works:
+Zooming In: When you scroll up, the Field of View (FOV) decreases, giving the appearance of zooming in.
+Zooming Out: When you scroll down, the FOV increases, zooming out.
+How to Implement:
+Attach this updated script to your Camera object like before.
+Now, when you play the scene, you’ll be able to rotate the camera and zoom in or out using the scroll wheel.
+Focus on the Phone:
+This script doesn't directly "focus" on an object (like auto-aiming at the phone), but if you position your camera well and zoom in, you should be able to view specific objects like the phone on the desk.
+
+If you want the camera to automatically zoom and focus on an object when clicked, that would require additional scripting to detect clicks and move the camera toward the object. Let me know if you'd like that functionality too!
